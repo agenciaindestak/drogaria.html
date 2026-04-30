@@ -1351,7 +1351,7 @@
             }
 
             .hero {
-                padding: 350px 20px 60px;
+                padding: 210px 20px 60px;
                 min-height: auto;
                 display: block !important;
             }
@@ -2601,6 +2601,23 @@
         class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+
+    <script>
+        // Ajuste dinâmico do espaçamento: mede a altura real do header e aplica no hero
+        function ajustarEspacamentoHero() {
+            var header = document.querySelector('header');
+            var hero = document.querySelector('.hero');
+            if (!header || !hero) return;
+            var alturaHeader = header.getBoundingClientRect().height;
+            // Adiciona 20px de respiro extra após o cabeçalho
+            hero.style.paddingTop = (alturaHeader + 20) + 'px';
+        }
+
+        // Roda ao carregar e ao redimensionar a tela
+        window.addEventListener('load', ajustarEspacamentoHero);
+        window.addEventListener('resize', ajustarEspacamentoHero);
+    </script>
 
 </body>
 
