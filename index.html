@@ -1166,19 +1166,23 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .header-content {
-                flex-wrap: wrap;
+                display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: calc(10px + env(safe-area-inset-top)) 0 10px;
+                padding: calc(15px + env(safe-area-inset-top)) 0 15px;
+                gap: 10px;
             }
 
             .logo {
-                width: 150px;
+                width: auto;
+                max-width: 180px;
                 z-index: 1001;
+                flex-shrink: 0;
             }
 
             .logo img {
-                max-height: 50px;
+                max-height: 65px;
+                width: auto;
             }
 
             /* Mobile Menu - Hamburger */
@@ -1321,17 +1325,27 @@
                 gap: 5px;
             }
 
+            .header-whatsapp-btn {
+                padding: 10px 15px !important;
+                font-size: 13px !important;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                white-space: nowrap;
+            }
+
             .header-whatsapp-btn span {
-                display: inline-block;
+                display: none;
+                /* Esconder texto longo no mobile para caber no meio */
             }
 
             @media (max-width: 400px) {
-                .header-whatsapp-btn span {
-                    display: none;
+                .logo img {
+                    max-height: 55px;
                 }
 
                 .header-whatsapp-btn {
-                    padding: 8px 12px !important;
+                    padding: 8px 10px !important;
                 }
             }
 
@@ -1610,10 +1624,6 @@
             .pharmacist-info .btn,
             .desktop-only-btn {
                 display: none !important;
-            }
-
-            .logo {
-                width: 160px;
             }
 
             .header-cta span {
