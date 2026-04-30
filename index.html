@@ -1175,13 +1175,13 @@
 
             .logo {
                 width: auto;
-                max-width: 180px;
+                max-width: 200px;
                 z-index: 1001;
                 flex-shrink: 0;
             }
 
             .logo img {
-                max-height: 65px;
+                max-height: 80px;
                 width: auto;
             }
 
@@ -1326,17 +1326,18 @@
             }
 
             .header-whatsapp-btn {
-                padding: 10px 15px !important;
-                font-size: 13px !important;
+                padding: 12px 18px !important;
+                font-size: 14px !important;
                 display: flex;
                 align-items: center;
-                gap: 5px;
+                gap: 8px;
                 white-space: nowrap;
+                order: 0;
+                /* No meio entre logo e hamburguer */
             }
 
             .header-whatsapp-btn span {
-                display: none;
-                /* Esconder texto longo no mobile para caber no meio */
+                display: none !important;
             }
 
             @media (max-width: 400px) {
@@ -1901,6 +1902,10 @@
                 <div class="logo">
                     <img src="logo-macedo-drogaria.png" alt="Drogaria Macedo" loading="eager" decoding="async">
                 </div>
+                <a href="https://wa.me/5522997487421?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendente%20da%20Drogaria%20Macedo."
+                    class="btn btn-primary header-whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> <span>Falar com Atendente</span>
+                </a>
                 <div class="menu-toggle" id="menu-toggle">
                     <span></span>
                     <span></span>
@@ -1921,10 +1926,6 @@
                         </a>
                     </div>
                 </nav>
-                <a href="https://wa.me/5522997487421?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendente%20da%20Drogaria%20Macedo."
-                    class="btn btn-primary header-whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> <span>Falar com Atendente</span>
-                </a>
             </div>
         </div>
     </header>
