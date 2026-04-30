@@ -1349,11 +1349,10 @@
             }
 
             .hero-image {
-                order: -1;
                 width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-                min-height: 200px;
+                max-width: none;
+                margin: 20px 0;
+                min-height: auto;
             }
 
             .hero-image img,
@@ -1601,8 +1600,13 @@
                 padding: 12px;
             }
 
+            .pharmacist-info .btn,
+            .desktop-only-btn {
+                display: none !important;
+            }
+
             .logo {
-                width: 45vw;
+                width: 100%;
             }
 
             .header-cta span {
@@ -2128,7 +2132,7 @@
                     </div>
 
                     <a href="https://wa.me/5522997487421?text=Olá!%20Gostaria%20de%20falar%20com%20o%20farmacêutico%20de%20plantão."
-                        class="btn btn-primary" target="_blank">
+                        class="btn btn-primary desktop-only-btn" target="_blank">
                         <i class="fas fa-user-md"></i> Falar com Farmacêutico
                     </a>
                 </div>
