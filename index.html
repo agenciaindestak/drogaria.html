@@ -1351,7 +1351,10 @@
             }
 
             .hero {
-                padding: 200px 20px 60px;
+                padding-top: 20px;
+                padding-bottom: 60px;
+                padding-left: 20px;
+                padding-right: 20px;
                 min-height: auto;
             }
 
@@ -2603,27 +2606,21 @@
 
 
     <script>
-        // Ajuste dinâmico: mede a altura REAL do header e empurra o hero para baixo
-        function ajustarEspacamentoHero() {
+        // SOLUÇÃO PADRÃO para header fixo: empurra o body inteiro para baixo
+        function ajustarEspacamento() {
             var header = document.querySelector('header');
-            var hero = document.querySelector('.hero');
-            if (!header || !hero) return;
-            // offsetHeight é mais confiável que getBoundingClientRect em mobile
+            if (!header) return;
             var alturaHeader = header.offsetHeight;
             if (alturaHeader > 0) {
-                hero.style.paddingTop = (alturaHeader + 20) + 'px';
+                document.body.style.paddingTop = alturaHeader + 'px';
             }
         }
 
-        // Roda o mais cedo possível (antes dos recursos carregarem)
-        document.addEventListener('DOMContentLoaded', ajustarEspacamentoHero);
-        // Roda de novo depois que tudo carregar (imagens, fontes)
-        window.addEventListener('load', ajustarEspacamentoHero);
-        // Roda ao redimensionar
-        window.addEventListener('resize', ajustarEspacamentoHero);
-        // Disparos extras para garantir (fontes Google podem mudar a altura do header)
-        setTimeout(ajustarEspacamentoHero, 100);
-        setTimeout(ajustarEspacamentoHero, 500);
+        document.addEventListener('DOMContentLoaded', ajustarEspacamento);
+        window.addEventListener('load', ajustarEspacamento);
+        window.addEventListener('resize', ajustarEspacamento);
+        setTimeout(ajustarEspacamento, 100);
+        setTimeout(ajustarEspacamento, 500);
     </script>
 
 </body>
