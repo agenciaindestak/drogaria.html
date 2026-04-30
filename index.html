@@ -1336,7 +1336,7 @@
             }
 
             .hero {
-                padding: 120px 0 60px;
+                padding: 140px 0 60px;
                 min-height: auto;
             }
 
@@ -1349,9 +1349,10 @@
             }
 
             .hero-image {
+                order: -1;
                 width: 100%;
                 max-width: none;
-                margin: 20px 0;
+                margin: 0 0 20px 0;
                 min-height: auto;
             }
 
@@ -1359,8 +1360,14 @@
             .delivery-image img,
             .pharmacist-image img {
                 width: 100%;
-                height: auto;
+                height: auto !important;
                 max-width: 100%;
+                display: block;
+                object-fit: contain !important;
+            }
+
+            .floating-card {
+                display: none !important;
             }
 
             .delivery-image,
@@ -1606,7 +1613,7 @@
             }
 
             .logo {
-                width: 100%;
+                width: 160px;
             }
 
             .header-cta span {
